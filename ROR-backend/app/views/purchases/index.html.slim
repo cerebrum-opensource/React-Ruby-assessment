@@ -1,0 +1,19 @@
+h1 Listing purchases
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @purchases.each do |purchase|
+      tr
+        td = link_to 'Show', purchase
+        td = link_to 'Edit', edit_purchase_path(purchase)
+        td = link_to 'Destroy', purchase, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Purchase', new_purchase_path
